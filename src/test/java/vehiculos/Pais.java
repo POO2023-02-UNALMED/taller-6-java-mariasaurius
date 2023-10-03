@@ -1,4 +1,4 @@
-package Vehiculo;
+package vehiculos;
 
 import java.util.HashMap;
 import java.util.ArrayList;
