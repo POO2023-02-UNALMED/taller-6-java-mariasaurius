@@ -24,10 +24,10 @@ public class Pais {
 		}
 	}
 	
-	public String claveMaxima = null;
-    int valorMaximo = Integer.MIN_VALUE;
     
-	public String paisMasVendedor () {
+	public static Pais paisMasVendedor () {
+		 String claveMaxima = null;
+	     int valorMaximo = Integer.MIN_VALUE;
 		 for (String clave : cantidadVehiculosxPais.keySet()) {
 	            int valor = cantidadVehiculosxPais.get(clave);
 	            if (valor > valorMaximo) {
@@ -35,7 +35,7 @@ public class Pais {
 	                claveMaxima = clave;
 	            }
 	        }
-		 return claveMaxima;
+		 return new Pais(claveMaxima);
 	}
 	
 	public String getNombre() {
