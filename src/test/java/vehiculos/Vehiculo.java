@@ -26,7 +26,6 @@ public class Vehiculo {
 	}
 	
 	public String vehiculosPorTipo (){
-		//Llamar al atributo de clase para obtener la cantidad de automoviles
 		int automoviles = Automovil.getCantidadAutomoviles();
 		int camiones = Camion.getCantidadCamiones();
 		int camionetas = Camioneta.getCantidadCamionetas();

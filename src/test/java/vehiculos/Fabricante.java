@@ -41,7 +41,7 @@ public class Fabricante {
 		  for (Vehiculo vehiculo : listaVehiculosCreados) {
 		       if (vehiculo.getFabricante().getNombre().equals(claveMaxima)) {
 		           paisMayorVentas = vehiculo.getFabricante().getPais();
-		           break; // Sal del bucle una vez que se encuentre el país
+		           break; 
 		        }
 		    }
 		  
