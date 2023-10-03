@@ -11,6 +11,7 @@ public class Pais {
 	public Pais (String nombre) {
 		this.setNombre(nombre);
 		Pais.cantidadVehiculosxPais = new HashMap<String, Integer>();
+		Pais.listaVehiculosCreados = new ArrayList<Vehiculo>();
 	}
 
 	public void agregarVehiculos(Vehiculo vehiculos) {
