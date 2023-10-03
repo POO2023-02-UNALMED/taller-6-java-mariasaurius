@@ -26,7 +26,7 @@ public class Pais {
 	}
 	
 	public static Pais paisMasVendedor () {
-		 String claveMaxima = null;
+		 String claveMaxima = "valorrandom";
 	     int valorMaximo = Integer.MIN_VALUE;
 		 for (String clave : cantidadVehiculosxPais.keySet()) {
 	            int valor = cantidadVehiculosxPais.get(clave);
