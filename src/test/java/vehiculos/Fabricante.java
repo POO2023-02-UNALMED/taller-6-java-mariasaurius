@@ -13,6 +13,7 @@ public class Fabricante {
 		this.setNombre(nombre);
 		this.setPais(pais);
 		Fabricante.cantidadVehiculosxFabricante = new HashMap<String, Integer>();
+		Fabricante.listaVehiculosCreados = new ArrayList<Vehiculo>();
 	}
 	
 	public void agregarVehiculos(Vehiculo vehiculos) {
@@ -27,7 +28,7 @@ public class Fabricante {
 	}
 	
 	public static Fabricante fabricaMayorVentas () {
-		 String claveMaxima = null;
+		 String claveMaxima = "valorcualquiera";
 	     int valorMaximo = Integer.MIN_VALUE;
 		 for (String clave : cantidadVehiculosxFabricante.keySet()) {
 	            int valor = cantidadVehiculosxFabricante.get(clave);
