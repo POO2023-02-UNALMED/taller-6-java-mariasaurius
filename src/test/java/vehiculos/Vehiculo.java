@@ -20,6 +20,7 @@ public class Vehiculo {
 		this.setVelocidadMaxima(velocidadMaxima);
 		this.setNombre(nombre);
 		this.setPrecio(precio);
+		this.setPeso(peso);
 		this.setTraccion(traccion);
 		this.setFabricante(fabricante);
 		Vehiculo.CantidadVehiculos++;
@@ -91,5 +92,4 @@ public class Vehiculo {
 		CantidadVehiculos = cantidadVehiculos;
 	}
 	
-
 }
