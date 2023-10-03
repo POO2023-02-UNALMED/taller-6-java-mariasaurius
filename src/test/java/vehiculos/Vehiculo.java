@@ -14,7 +14,7 @@ public class Vehiculo {
 	
 	
 	
-	Vehiculo (String placa, int puertas, int velocidadMaxima, String nombre, long precio, int peso, String traccion, Fabricante fabricante){
+	public Vehiculo (String placa, int puertas, int velocidadMaxima, String nombre, long precio, int peso, String traccion, Fabricante fabricante){
 		this.setPlaca(placa);
 		this.setPuertas(puertas);
 		this.setVelocidadMaxima(velocidadMaxima);
@@ -25,7 +25,7 @@ public class Vehiculo {
 		Vehiculo.CantidadVehiculos++;
 	}
 	
-	String vehiculosPorTipo (){
+	public String vehiculosPorTipo (){
 		//Llamar al atributo de clase para obtener la cantidad de automoviles
 		int automoviles = Automovil.getCantidadAutomoviles();
 		int camiones = Camion.getCantidadCamiones();
