@@ -6,7 +6,7 @@ public class Vehiculo {
 	private int puertas;
 	private int velocidadMaxima;
 	private String nombre;
-	private long precio;
+	private int precio;
 	private int peso;
 	private String traccion;
 	private Fabricante fabricante;
@@ -14,7 +14,7 @@ public class Vehiculo {
 	
 	
 	
-	public Vehiculo (String placa, int puertas, int velocidadMaxima, String nombre, long precio, int peso, String traccion, Fabricante fabricante){
+	public Vehiculo (String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante){
 		this.setPlaca(placa);
 		this.setPuertas(puertas);
 		this.setVelocidadMaxima(velocidadMaxima);
@@ -60,10 +60,10 @@ public class Vehiculo {
 	public void setVelocidadMaxima(int velocidadMaxima) {
 		this.velocidadMaxima = velocidadMaxima;
 	}
-	public long getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
-	public void setPrecio(long precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 	public int getPeso() {
