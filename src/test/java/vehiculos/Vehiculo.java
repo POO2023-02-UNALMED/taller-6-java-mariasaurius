@@ -12,8 +12,6 @@ public class Vehiculo {
 	private Fabricante fabricante;
 	private static int CantidadVehiculos;
 	
-	
-	
 	public Vehiculo (String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante){
 		this.setPlaca(placa);
 		this.setPuertas(puertas);
@@ -24,6 +22,13 @@ public class Vehiculo {
 		this.setTraccion(traccion);
 		this.setFabricante(fabricante);
 		Vehiculo.CantidadVehiculos++;
+		
+		String paisFabricante = fabricante.getPais().getNombre();
+	    Pais.incrementarCantidadVehiculos(paisFabricante);
+	    
+	    String nombreFabricante = this.getFabricante().getNombre();
+	    Fabricante.incrementarCantidadVehiculos(nombreFabricante);
+	   
 	}
 	
 	public String vehiculosPorTipo (){
@@ -92,4 +97,8 @@ public class Vehiculo {
 		CantidadVehiculos = cantidadVehiculos;
 	}
 	
+
 }
+
+
+

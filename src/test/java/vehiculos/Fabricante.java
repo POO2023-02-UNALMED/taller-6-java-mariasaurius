@@ -1,55 +1,45 @@
 package vehiculos;
 
 import java.util.HashMap;
-import java.util.ArrayList;
 
 public class Fabricante {
 	private String nombre;
 	private Pais pais;
-	static HashMap<String, Integer> cantidadVehiculosxFabricante;
-	static ArrayList<Vehiculo> listaVehiculosCreados;
+	private static HashMap<String, Fabricante> fabricantes = new HashMap<>();
+    private static HashMap<String, Integer> cantidadVehiculosxFabricante = new HashMap<>();
+
+
 	
 	public Fabricante (String nombre, Pais pais){
 		this.setNombre(nombre);
 		this.setPais(pais);
-		Fabricante.cantidadVehiculosxFabricante = new HashMap<String, Integer>();
-		Fabricante.listaVehiculosCreados = new ArrayList<Vehiculo>();
+		fabricantes.put(nombre, this);
 	}
 	
-	public void agregarVehiculos(Vehiculo vehiculos) {
-		listaVehiculosCreados.add(vehiculos);
-	}
+	public static void incrementarCantidadVehiculos(String nombreFabricante) {
+        cantidadVehiculosxFabricante.put(nombreFabricante, cantidadVehiculosxFabricante.getOrDefault(nombreFabricante, 0) + 1);
+    }
+
 	
-	void agregarCantidadVehiculos (){
-		for(Vehiculo vehiculo : listaVehiculosCreados) {
-			String nombreFabricante = vehiculo.getFabricante().getNombre();
-			cantidadVehiculosxFabricante.put(nombreFabricante, cantidadVehiculosxFabricante.getOrDefault(nombreFabricante, 0) + 1);
-		}
-	}
-	
-	public static Fabricante fabricaMayorVentas () {
-		 String claveMaxima = "valorcualquiera";
-	     int valorMaximo = Integer.MIN_VALUE;
-		 for (String clave : cantidadVehiculosxFabricante.keySet()) {
-	            int valor = cantidadVehiculosxFabricante.get(clave);
-	            if (valor > valorMaximo) {
-	                valorMaximo = valor;
-	                claveMaxima = clave;
-	            }
-	        }
-		 
-		  Pais paisMayorVentas = null;
-		  for (Vehiculo vehiculo : listaVehiculosCreados) {
-		       if (vehiculo.getFabricante().getNombre().equals(claveMaxima)) {
-		           paisMayorVentas = vehiculo.getFabricante().getPais();
-		           break; 
-		        }
-		    }
-		  
-		  return new Fabricante(claveMaxima, paisMayorVentas);
-	}
-	
-	
+    public static Fabricante fabricaMayorVentas() {
+        String nombreFabricaMasVendedor = null;
+        int maxVentas = Integer.MIN_VALUE;
+
+        for (String nombreFabrica : cantidadVehiculosxFabricante.keySet()) {
+            int ventas = cantidadVehiculosxFabricante.get(nombreFabrica);
+
+            if (ventas > maxVentas) {
+                maxVentas = ventas;
+                nombreFabricaMasVendedor = nombreFabrica;
+            }
+        }
+
+        Fabricante fabricaMayorVentas = fabricantes.get(nombreFabricaMasVendedor);
+
+        return fabricaMayorVentas;
+    }
+
+ 
 	public String getNombre() {
 		return nombre;
 	}
